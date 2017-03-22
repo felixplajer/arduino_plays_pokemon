@@ -1,0 +1,24 @@
+{
+  "name": "gameboy",
+  "version": "1.0.0",
+  "description": "web-controlled crowd-sourced gameboy gameplay",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kateplajer/gameboy.git"
+  },
+  "author": "Kate Plajer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kateplajer/gameboy/issues"
+  },
+  "homepage": "https://github.com/kateplajer/gameboy#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "johnny-five": "^0.10.6",
+    "socket.io": "^1.7.3"
+  }
+}
