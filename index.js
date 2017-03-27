@@ -103,17 +103,22 @@ function pressButton() {
     }
     var ind = max[Math.floor(Math.random() * max.length)];
     var push = buttons[ind];
+    if (maxVal == 0) {
+        push = null;
+    }
 
     console.log(push);
     console.log();
 
-    io.sockets.emit("reset color", {color: "rgb(16,64,96"});
+    io.sockets.emit("reset color", {color: "rgb(16,64,96)"});
     colors = [];
     for (var i = 0; i < 8; i++) {
         colors.push({r:16,g:64,b:96});
     }
 
-    io.sockets.emit("arduino", push);
+    if (push != null) {
+        io.sockets.emit("arduino", push);
+    }
 
 }
 
