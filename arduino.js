@@ -48,25 +48,25 @@ board.on('ready', function () {
                 servos['upleft'].to(140);
                 setTimeout(function() {
                     servos['upleft'].center();
-                }, 400);
+                }, 350);
                 break;
             case 'R':
                 servos['downright'].to(150);
                 setTimeout(function() {
                     servos['downright'].center();
-                }, 400);
+                }, 350);
                 break;
             case 'Down':
                 servos['downright'].to(35);
                 setTimeout(function() {
                     servos['downright'].center();
-                }, 400);
+                }, 350);
                 break;
             case 'Up':
                 servos['upleft'].to(40);
                 setTimeout(function() {
                     servos['upleft'].center();
-                }, 400);
+                }, 350);
                 break;
             case 'Start':
                 servos['startselect'].to(150);
