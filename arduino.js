@@ -30,7 +30,7 @@ board.on('ready', function () {
     };
 
     socket.on("arduino", function(msg) {
-        console.log("got it!");
+        console.log("got it: " + msg);
         switch(msg) {
             case 'A':
                 servos['ab'].to(150);

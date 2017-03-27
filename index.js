@@ -1,144 +1,3 @@
-// const express = require('express');
-// const app = express();
-// const server = require('http').Server(app);
-// const io = require('socket.io')(server);
-// app.use(express.static('public'));
-// const five = require('johnny-five');
-
-// var scores = [0,0,0,0,0,0,0,0];
-// var buttons = ['A', 'B', 'L', 'R', 'Down', 'Up', 'Start', 'Select'];
-
-// var board = new five.Board({
-//   	repl:false
-// });
-
-
-// board.on('ready', function () {
-
-// 	var servos = {
-// 		ab: new five.Servo({
-// 			pin: 3,
-// 			center: true
-// 		}),
-// 		downright: new five.Servo({
-// 			pin: 9,
-// 			center: true
-// 		}),
-// 		upleft: new five.Servo({
-// 			pin: 10,
-// 			center: true
-// 		}),
-// 		startselect: new five.Servo({
-// 			pin: 11,
-// 			center: true
-// 		})
-// 	}
-
-//     io.on('connection', function (socket) {
-//         socket.on('A', function () {
-//             scores[0]++;
-//             console.log("A");
-//         });
-
-//         socket.on('B', function () {
-//             scores[1]++;
-//         });
-
-//         socket.on('left', function () {
-//             scores[2]++;
-//         });
-
-//         socket.on('right', function () {
-//             scores[3]++;
-//         });
-
-//         socket.on('up', function () {
-//             scores[4]++;
-//         });
-
-//         socket.on('down', function () {
-//             scores[5]++;
-//         });
-
-//         socket.on('start', function () {
-//             scores[6]++;
-//         });
-
-//         socket.on('select', function () {
-//             scores[7]++;
-//         });
-
-//     });
-
-//     setInterval(pressButton, 10000);
-
-//     function pressButton() {
-//         var max = 0;
-//         for (var i = 0; i < scores.length; i++) {
-//             if (scores[i] > scores[max]) {
-//                 max = i;
-//             }
-//             scores[i] = 0;
-//         }
-//         var push = buttons[max];
-//         console.log(push);
-
-//         switch(push) {
-//             case 'A':
-//                 servos['ab'].to(150);
-//                 setTimeout(function() {
-//                     servos['ab'].center();
-//                 }, 500);
-//                 break;
-//             case 'B':
-//                 servos['ab'].to(40);
-//                 setTimeout(function() {
-//                     servos['ab'].center();
-//                 }, 500);
-//                 break;
-//             case 'L':
-//                 servos['upleft'].to(40);
-//                 setTimeout(function() {
-//                     servos['upleft'].center();
-//                 }, 500);
-//                 break;
-//             case 'R':
-//                 servos['downright'].to(150);
-//                 setTimeout(function() {
-//                     servos['downright'].center();
-//                 }, 500);
-//                 break;
-//             case 'Down':
-//                 servos['downright'].to(40);
-//                 setTimeout(function() {
-//                     servos['downright'].center();
-//                 }, 500);
-//                 break;
-//             case 'Up':
-//                 servos['upleft'].to(150);
-//                 setTimeout(function() {
-//                     servos['upleft'].center();
-//                 }, 500);
-//                 break;
-//             case 'Start':
-//                 servos['startselect'].to(150);
-//                 setTimeout(function() {
-//                     servos['startselect'].center();
-//                 }, 500);
-//                 break;
-//             case 'Select':
-//                 servos['startselect'].to(40);
-//                 setTimeout(function() {
-//                     servos['startselect'].center();
-//                 }, 500);
-//                 break;
-//         }
-//     }
-
-// });
-
-// server.listen(3000);
-
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
@@ -160,10 +19,6 @@ for (var i = 0; i < 8; i++) {
 app.get('/', function (req, res) {
     res.render('index', {colors: colors});
 });
-
-// app.get('/arduino', function (req, res) {
-//     res.render('arduino', {colors: colors});
-// });
 
 
 io.on('connection', function (socket) {
@@ -261,8 +116,5 @@ function pressButton() {
     io.sockets.emit("arduino", push);
 
 }
-
-
-
 
 server.listen(3000);
