@@ -80,7 +80,7 @@ io.on('connection', function (socket) {
 
 });
 
-setInterval(pressButton, 30000);
+setInterval(pressButton, 15000);
 
 function pressButton() {
     var max = [];
