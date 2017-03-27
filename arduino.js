@@ -16,11 +16,11 @@ board.on('ready', function () {
          center: true
         }),
         downright: new five.Servo({
-         pin: 9,
+         pin: 5,
          center: true
         }),
         upleft: new five.Servo({
-         pin: 10,
+         pin: 9,
          center: true
         }),
         startselect: new five.Servo({
@@ -33,7 +33,7 @@ board.on('ready', function () {
         console.log("got it: " + msg);
         switch(msg) {
             case 'A':
-                servos['ab'].to(150);
+                servos['ab'].to(140);
                 setTimeout(function() {
                     servos['ab'].center();
                 }, 500);
@@ -45,7 +45,7 @@ board.on('ready', function () {
                 }, 500);
                 break;
             case 'L':
-                servos['upleft'].to(40);
+                servos['upleft'].to(140);
                 setTimeout(function() {
                     servos['upleft'].center();
                 }, 500);
@@ -57,13 +57,13 @@ board.on('ready', function () {
                 }, 500);
                 break;
             case 'Down':
-                servos['downright'].to(40);
+                servos['downright'].to(35);
                 setTimeout(function() {
                     servos['downright'].center();
                 }, 500);
                 break;
             case 'Up':
-                servos['upleft'].to(150);
+                servos['upleft'].to(40);
                 setTimeout(function() {
                     servos['upleft'].center();
                 }, 500);
@@ -75,7 +75,7 @@ board.on('ready', function () {
                 }, 500);
                 break;
             case 'Select':
-                servos['startselect'].to(40);
+                servos['startselect'].to(50);
                 setTimeout(function() {
                     servos['startselect'].center();
                 }, 500);
