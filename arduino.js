@@ -1,5 +1,5 @@
 var io = require('socket.io-client');
-var socket = io.connect('http://localhost:3000', {reconnect: true});
+var socket = io.connect('https://arduino-plays-pokemon.herokuapp.com/', {reconnect: true});
 
 var five = require('johnny-five');
 
@@ -83,3 +83,7 @@ board.on('ready', function () {
         }
     });
 });
+
+// socket.on("arduino", function(msg) {
+//         console.log("got it: " + msg);
+// });
